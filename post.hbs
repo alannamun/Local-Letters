@@ -3,29 +3,73 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
+<section class="pushy pushy-right">
+<div>
+    <div class="about-content">
+       <h2 class="blog-description">Letters are something that surround us every day but are barely noticed. <a href="http://alannamunro.com" target="_blank">Alanna Munro</a> created this project to bring attention to the letters in our every day surroundings. This is a collection of letters found on building entrances around Vancouver, Canada. </h2>
+    
+    <div class="share">
+                    <p></p>
+                    <p>Share This Site</p>
+                    <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <span class="hidden">Twitter</span>
+                    </a>
+                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <span class="hidden">Facebook</span>
+                    </a>
+                    <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <span class="hidden">Google+</span>
+                    </a>
+                </div>
+        </div>
+</div>
+</section>
+
+{{! The header on the homepage, with the site name }}
+<header class="site-head">
+    <div class="vertical">
+        <a class="site-header-link" href="{{@blog.url}}">
+        <div class="site-head-content inner">
+            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+            <h1 class="blog-title">{{@blog.title}}</h1>
+            <h2 class="blog-description">{{@blog.description}}</h2>
+        </div>
+        </a>
+    </div>
+</header>
+
+
+
+{{! The main content area on the homepage }}
+
+  <div class="site-overlay"></div>
+
 <main class="content" role="main">
 
-    <article class="{{post_class}}">
+<div class="menu-btn">
+<div class="link-text">
+<swap data-text-swap="CLOSE">ABOUT</swap>
+</div>
+</div>
 
-        {{! Each post has the blog logo at the top, with a link back to the home page }}
-        <header class="post-header">
-            <a class="blog-logo" href="{{@blog.url}}">
-                {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="Blog Logo" />
-                {{else}}
-                    <span class="blog-title">{{@blog.title}}</span>
-                {{/if}}
-            </a>
-        </header>
+    <article class="{{post_class}}">
 
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
+        <header class="post-header">
+            <section class="featured-image">
+            {{content words="0"}}
+            </section>
+        </header>
+
             <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
 
-            <h1 class="post-title">{{{title}}}</h1>
-
             <section class="post-content">
+                <h1 class="post-title">{{{title}}}</h1>
                 {{content}}
             </section>
 
