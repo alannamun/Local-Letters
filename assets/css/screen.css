@@ -181,7 +181,7 @@ body {
 
 ::selection {
     color: #222;
-    background: #D6EDFF;
+    background: #68d8a5;
     text-shadow: none;
 }
 
@@ -227,6 +227,7 @@ h5 {
 h6 {
     font-size: 20px; font-size: 1.25rem;
     line-height: 22px; line-height: 1.375rem;
+    margin-bottom: 22px;
 }
 
 a {
@@ -235,7 +236,7 @@ a {
 }
 
 a:hover {
-    color: #57A3E8;
+    color: #777777;
 }
 
 h1 a, h2 a, h3 a,
@@ -467,7 +468,7 @@ margin on the iframe, cause it breaks stuff. */
     z-index:500;
     text-align: center;
     color: #444444;
-    background: #efefef;
+    background: #ffffff;
 }
 .content {
     margin-top: 80px;
@@ -490,6 +491,7 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 28px; line-height: 1.75rem;
     font-weight: 300;
     font-family: "adelle-sans", sans-serif;
+    letter-spacing: 0.10px;
 }
 
 /* about sidebar */
@@ -505,7 +507,7 @@ margin on the iframe, cause it breaks stuff. */
     top: 0px;
     right: 0px;
     z-index: 9001;
-    background: #8FD1C3;
+    background: #e6e7e8;
     color: #3A4145;
     text-align: center;
     cursor: pointer;
@@ -540,7 +542,7 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     width:100%;
     margin: auto;
-    padding-bottom: 4rem;
+    padding-bottom: 0;
     word-break: break-word;
     hyphens: auto;
 }
@@ -667,11 +669,17 @@ margin on the iframe, cause it breaks stuff. */
     width: 80%;
     max-width: 700px;
     margin: auto;
+    padding-bottom: 1rem;
 }
 
 .post-content p {
     position: relative;
     width:100%;
+}
+
+/* Don't show first image in the post */
+.post-content img:first-child {
+    display: none;
 }
 
 /* Keep images centred and within the bounds of the post-width */
@@ -695,15 +703,14 @@ margin on the iframe, cause it breaks stuff. */
 .post-footer {
     position: relative;
     margin: auto;
-    height: 1rem 0 0 0;
-    padding: 1rem 0 0 0;
-    border-top: #EBF2F6 1px solid;
+    padding: 2rem 0 0 0;
+    background: #e6e7e8;
 }
 
 .post-footer h4 {
     font-size: 28px; font-size: 1.75rem;
     line-height: 32px; line-height: 2rem;
-    margin: 0;
+    margin: auto;
 }
 
 .post-footer p {
@@ -761,17 +768,19 @@ margin on the iframe, cause it breaks stuff. */
    to be flexible at smaller screen sizes while the share
    links remain at a fixed width the whole time */
 .post-footer .share {
-    position: absolute;
+    position: relative;
     top: 0;
-    right: 0;
     width: 240px;
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
 }
 
 .post-footer .share a {
-    font-size: 1rem;
+    font-size: 1.25rem;
     display: inline-block;
-    margin: 1rem 1.6rem 1.6rem 0;
-    color: #BBC7CC;
+    margin: 0 0 1.5rem 0;
+    color: #444444;
     text-decoration: none;
 }
 
@@ -904,7 +913,7 @@ margin on the iframe, cause it breaks stuff. */
 
 .site-footer {
     position: relative;
-    margin: 8rem 0 0 0;
+    margin: 0;
     padding: 4rem 0;
     border-top: #EBF2F6 1px solid;
     font-family: "adelle-sans", sans-serif;
@@ -1096,28 +1105,36 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .post {
-        width:auto;
+        width: auto;
         font-size: 0.8em;
         line-height: 1.6em;
+        padding-bottom: 0px;
     }
+    .content {
+    margin-top: 50px;
+}
 
     .site-head {
         height: 50px;
     }
 
     .blog-title {
-        font-size: 22px; font-size: 1.375rem;
+        font-size: 16px; font-size: 1rem;
         line-height: 12px; line-height: 0.75rem;
-        padding-top: 0;
+        padding-top: 0px;
+        font-weight: 400;
+        letter-spacing: 3px;
     }
 
     .menu-btn {
-        width: 80px;
+        width: 60px;
         height: 50px;
     }
     
     .link-text{
-        margin: 10px 14px;
+        margin: 19px 10px;
+        font-size: 12px; font-size: 0.75rem;
+        line-height: 12px; line-height: 0.75rem;
     }
 
     .blog-description {
@@ -1125,8 +1142,13 @@ margin on the iframe, cause it breaks stuff. */
         line-height: 24px; line-height: 1.5em;
     }
 
+    .post-excerpt p {
+    font-size: 16px; font-size: 1rem;
+        line-height: 24px; line-height: 1.5em;
+}
+
     p {
-        font-size: 18px; font-size: 1.125rem;
+        font-size: 16px; font-size: 1rem;
         line-height: 24px; line-height: 1.5em;
     }
 
@@ -1147,8 +1169,8 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .post-template .post {
-        top: 0px;
-        margin-top: 50px;
+        top: 0;
+        margin-top: 0px;
     }
 
     .post-template .post-header {
@@ -1168,7 +1190,7 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .post-meta {
-        font-size: 1.3rem;
+        font-size: 16px; font-size: 1rem;
     }
 
     .post-footer {
