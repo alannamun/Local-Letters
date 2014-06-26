@@ -3,30 +3,7 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-<section class="pushy pushy-right">
-<div>
-    <div class="about-content">
-       <h2 class="blog-description">Letters are something that surround us every day but are barely noticed. <a href="http://alannamunro.com" target="_blank">Alanna Munro</a> created this project to bring attention to the letters in our every day surroundings. This is a collection of letters found on building entrances around Vancouver, Canada. </h2>
-    
-    <div class="share">
-                    <p></p>
-                    <p>Share This Site</p>
-                    <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                        <span class="hidden">Twitter</span>
-                    </a>
-                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                        <span class="hidden">Facebook</span>
-                    </a>
-                    <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                        <span class="hidden">Google+</span>
-                    </a>
-                </div>
-        </div>
-</div>
-</section>
+
 
 {{! The header on the homepage, with the site name }}
 <header class="site-head">
@@ -41,6 +18,34 @@
     </div>
 </header>
 
+    <section class="pushy pushy-right">
+<div>
+    <div class="about-content">
+       <h2 class="blog-description">Letters are something that surround us every day but are barely noticed. <a href="http://alannamunro.com" target="_blank">Alanna Munro</a> created this project to bring attention to the letters in our every day surroundings. This is a collection of letters found on building entrances around Vancouver, Canada. </h2>
+    
+        <div class="share">
+            <p></p>
+            <p>Share This Site</p>
+            <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <span class="hidden">Twitter</span>
+            </a>
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <span class="hidden">Facebook</span>
+            </a>
+            <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <span class="hidden">Google+</span>
+            </a>
+        </div>
+        <div>
+            Proudly published with <a href="https://ghost.org">Ghost</a>
+        </div>
+
+    </div>
+</div>
+</section>
 
 
 {{! The main content area on the homepage }}
@@ -85,7 +90,7 @@
                 </section>
 
                 <section class="share">
-                    <h6>Share this post</h6>
+                    <h4>Share this post</h4>
                     <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
                         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                         <span class="hidden">Twitter</span>
