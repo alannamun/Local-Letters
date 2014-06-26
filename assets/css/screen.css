@@ -119,7 +119,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 .icon-feed:before,
 .icon-twitter:before,
 .icon-google-plus:before,
-.icon-facebook:before {
+.icon-facebook:before,
+.icon-arrow-right:before {
     font-family: 'icons';
     speak: none;
     font-style: normal;
@@ -141,20 +142,27 @@ table { border-collapse: collapse; border-spacing: 0; }
     content: "\e001";
 }
 .icon-twitter:before {
-    content: "\e002";
-    font-size: 1.1em;
+    content: "a";
 }
 .icon-google-plus:before {
-    content: "\e003";
+    content: "d";
 }
 .icon-facebook:before {
-    content: "\e004";
+    content: "m";
+}
+.icon-arrow-right:before {
+  content: "n";
 }
 
 
 /* ==========================================================================
    2. General - Setting up some base styles
    ========================================================================== */
+.wf-loading body{
+    /* Hide the text while web fonts are loading to avoid FOUT */
+    visibility: hidden;
+}
+
 
 html {
     height: 100%;
@@ -175,7 +183,7 @@ body {
 
 ::-moz-selection {
     color: #222;
-    background: #D6EDFF;
+    background: #68d8a5;
     text-shadow: none;
 }
 
@@ -187,23 +195,24 @@ body {
 
 h1, h2, h3,
 h4, h5, h6 {
-    text-rendering: optimizeLegibility;
+    /* text-rendering: optimizeLegibility; */
     line-height: 1;
     margin-top: 0;
     font-family: "adelle-sans", sans-serif;
-    font-weight: 300;
+    font-weight: 100;
 }
 
 h1 {
-    font-size: 44px; font-size: 3rem;
-    line-height: 44px; line-height: 3rem;
-    letter-spacing: -2px;
-    text-indent: -3px;
+    font-size: 40px; font-size: 2.5rem;
+    font-weight: 100;
+    line-height: 40px; line-height: 2.5rem;
+    letter-spacing: -1px;
+    text-indent: -2px;
 }
 
 h2 {
     font-size: 40px; font-size: 2.5rem;
-    font-weight: 300;
+    font-weight: 100;
     line-height: 40px; line-height: 2.5rem;
     letter-spacing: -1px;
     text-indent: -2px;
@@ -231,18 +240,19 @@ h6 {
 }
 
 a {
-    color: #4a4a4a;
+    color: #333333;
     transition: color ease 0.3s;
+    border-bottom: solid 4px #68d8a5;
+    text-decoration: none
 }
 
 a:hover {
-    color: #777777;
+    color: #000;
 }
 
 h1 a, h2 a, h3 a,
 h4 a, h5 a, h6 a {
-    color: #444444
-    ;
+    color: #444444;
 }
 
 
@@ -457,32 +467,44 @@ margin on the iframe, cause it breaks stuff. */
    4. General - The main styles for the the theme
    ========================================================================== */
 
-/* Big cover image on the home page */
+/* Title and navigation bar at the top of the site */
 .site-head {
     position: fixed;
     display: table;
-    width: 100%;
-    height: 80px;
-    margin: 0px auto;
     top: 0px;
-    z-index:500;
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    z-index: 500;
     text-align: center;
-    color: #444444;
-    background: #ffffff;
+    color: #333333;
+    background: #efefef;
+    /* Add slight shadow to the bottom */
+    -webkit-box-shadow: -5px 0 6px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: -5px 0 6px 2px rgba(0, 0, 0, .2);
+    box-shadow: -5px 0 6px 2px rgba(0, 0, 0, .2);
 }
+
+/* Make sure nothing is hidden by the nav bar */
 .content {
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
-    margin: 12px;
-    font-size: 40px; font-size: 2.5rem;
+    padding-top: 16px;
+    font-size: 28px; font-size: 1.75rem;
     line-height: 16px; line-height: 1rem;
     font-weight: 300;
-    letter-spacing: 8px;
+    letter-spacing: 6px;
     font-family: "adelle-sans", sans-serif;
     text-transform: uppercase;
+}
+
+/* About sidebar, some is controlled in the pushy.css stylesheet */
+.about-content {
+    padding: 80px 25px 0 30px;
+    color: #222222; /* Override defualt text color */
 }
 
 .blog-description {
@@ -494,20 +516,13 @@ margin on the iframe, cause it breaks stuff. */
     letter-spacing: 0.10px;
 }
 
-/* about sidebar */
-
-.about-content {
-    padding: 80px 25px 0 30px;
-}
-
 .menu-btn{
     position: fixed;
     width: 100px;
-    height: 80px;
+    height: 50px;
     top: 0px;
     right: 0px;
     z-index: 9001;
-    background: #e6e7e8;
     color: #3A4145;
     text-align: center;
     cursor: pointer;
@@ -518,15 +533,16 @@ margin on the iframe, cause it breaks stuff. */
     position: absolute;
     white-space: nowrap;
     text-align: center;
-    margin: 26px 22px;
+    margin: 12px 22px;
     font-size: 16px; font-size: 1rem;
-    line-height: 16px; line-height: 1rem;
-    line-height: 1.8rem;
-    font-weight: 500;
+    line-height: 24px; line-height: 1.75rem;
+    font-weight: 600;
+    color: #333333;
+   /* border-bottom: solid 4px #68d8a5; */
 }
 
 .link-text:hover{
-    border-bottom: 2px solid #3A4145;
+   color: #000;
 }
 
 /* get rid of underline under icon links*/
@@ -542,7 +558,6 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     width:100%;
     margin: auto;
-    padding-bottom: 0;
     word-break: break-word;
     hyphens: auto;
 }
@@ -551,20 +566,21 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     width:80%;
     max-width: 700px;
-    margin: 4rem auto;
-    padding-bottom: 4rem;
+    margin: 3rem auto;
+    padding-bottom: 3rem;
     border-bottom: #cdcdcd 1px solid;
     word-break: break-word;
     hyphens: auto;
 }
 
+/* The large image at the start if each post */
 .featured-image img {
     width: 100%;
     margin: auto;
 }
 
 .post-title {
-    margin:0;
+    margin: 0;
 }
 
 .post-title a {
@@ -572,13 +588,25 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .post-excerpt p {
-    margin: 26px 0 0 0;
+    margin: 32px 0 0 0;
     font-size: 20px; font-size: 1.25rem;
-    line-height: 22px; line-height: 1.375em;
+    line-height: 24px; line-height: 1.5em;
 }
 
+.icon-arrow-right {
+    border-bottom: none;
+    color: #68d8a5;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+/* Not currently using post meta data */
 .post-meta {
     display: none;
+}
+/*
+.post-meta {
+    display: block;
     margin: 0 0 5px 0;
     font-family: "adelle-sans", sans-serif;
     font-size: 16px; font-size: 1rem;
@@ -591,7 +619,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .post-meta a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .user-meta {
@@ -636,6 +664,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 1.4rem;
     line-height: 1.5em;
 }
+*/
 
 /* ==========================================================================
    5. Single Post - When you click on an individual post
@@ -652,13 +681,7 @@ margin on the iframe, cause it breaks stuff. */
 .post-template .post {
     border-bottom: none;
     padding-bottom: 0;
-    margin-top: 80px;
-}
-
-/* Insert some mad padding up in the header for better spacing */
-.post-template .post-header {
-    padding: 0;
-    text-align: center;
+    margin-top: 50px;
 }
 
 .post-template .site-header-link{
@@ -708,9 +731,10 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .post-footer h4 {
-    font-size: 28px; font-size: 1.75rem;
+    font-size: 20px; font-size: 1.25rem;
     line-height: 32px; line-height: 2rem;
-    margin: auto;
+    margin: 0 0 1rem 0;
+    font-weight: 300;
 }
 
 .post-footer p {
@@ -723,7 +747,7 @@ margin on the iframe, cause it breaks stuff. */
 .author {
     display: none;
 }
-
+/* not using the autor info for this blog
 .author-meta {
     padding: 0;
     margin: 0;
@@ -740,15 +764,15 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* bullet divider */
-.author-meta li:before {
+/*.author-meta li:before {
     content: "•";
     display: inline-block;
     margin-right: 10px; /* space to the right of the bullet */
-    color: #BBC7CC;
+/*    color: #BBC7CC;
 }
 
 /* disable the bullet divider for the first item in the list */
-.author-meta li:first-child { margin-left: 0; }
+/*.author-meta li:first-child { margin-left: 0; }
 .author-meta li:first-child:before { display: none; }
 
 .author-meta a {
@@ -757,6 +781,7 @@ margin on the iframe, cause it breaks stuff. */
 .author-meta a:hover {
     color: #57A3E8;
 }
+*/
 
 /* Create some space to the right for the share links */
 .post-footer .author {
@@ -782,10 +807,11 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0 0 1.5rem 0;
     color: #444444;
     text-decoration: none;
+    border-bottom: none;
 }
 
 .post-footer .share a:hover {
-    color: #50585D;
+    color: #000;
 }
 
 
@@ -864,7 +890,8 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     width: 80%;
     max-width: 700px;
-    margin: 1rem auto;
+    margin: auto;
+    padding: 1rem 0 3rem 0;
     font-family: "adelle-sans", sans-serif;
     font-size: 16px; font-size: 1rem;
     line-height: 18px; line-height: 1.125em;
@@ -914,19 +941,17 @@ margin on the iframe, cause it breaks stuff. */
 .site-footer {
     position: relative;
     margin: 0;
-    padding: 4rem 0;
+    padding: 1rem 0;
     border-top: #EBF2F6 1px solid;
     font-family: "adelle-sans", sans-serif;
     font-size: 16px; font-size: 1rem;
     line-height: 24px; line-height: 1.5em;
     color: #BBC7CC;
-    text-align: center;
     background: #F7FAFB;
 }
 
 .site-footer a {
     color: #BBC7CC;
-    text-decoration: underline;
 }
 
 .site-footer a:hover {
@@ -947,7 +972,7 @@ margin on the iframe, cause it breaks stuff. */
     margin-right: 0.2em;
 }
 
-/* The subscribe icon on the footer */
+/* The subscribe icon on the footer 
 .subscribe {
     width: 28px;
     height: 28px;
@@ -962,8 +987,9 @@ margin on the iframe, cause it breaks stuff. */
     background: #fff;
     transition: box-shadow 0.5s;
 }
+*/
 
-/* The RSS icon, inserted via icon font */
+/* The RSS icon, inserted via icon font 
 .subscribe:before {
     color: #D2DEE3;
     font-size: 10px;
@@ -973,8 +999,10 @@ margin on the iframe, cause it breaks stuff. */
     font-weight: bold;
     transition: color 0.5s ease;
 }
+*/
 
-/* Add a box shadow to on hover */
+
+/* Add a box shadow to on hover 
 .subscribe:hover {
     box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
     transition: box-shadow 0.25s;
@@ -983,8 +1011,10 @@ margin on the iframe, cause it breaks stuff. */
 .subscribe:hover:before {
     color: #50585D;
 }
+*/
 
-/* CSS tooltip saying "Subscribe!" - initially hidden */
+
+/* CSS tooltip saying "Subscribe!" - initially hidden 
 .tooltip {
     opacity:0;
     display: inline-block;
@@ -1001,8 +1031,9 @@ margin on the iframe, cause it breaks stuff. */
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     transition: opacity 0.3s ease, top 0.3s ease;
 }
+*/
 
-/* The little chiclet arrow under the tooltip, pointing down */
+/* The little chiclet arrow under the tooltip, pointing down 
 .tooltip:after {
     content:"";
     border-width:5px 5px 0 5px;
@@ -1016,13 +1047,14 @@ margin on the iframe, cause it breaks stuff. */
     z-index: 220;
     width:0;
 }
+*/
 
-/* On hover, show the tooltip! */
+/* On hover, show the tooltip! 
 .subscribe:hover .tooltip {
     opacity: 1;
     top: -33px;
 }
-
+*/
 
 /* ==========================================================================
    10. Media Queries - Smaller than 900px
@@ -1043,7 +1075,7 @@ margin on the iframe, cause it breaks stuff. */
     .blog-title {
         font-size: 28px; font-size: 1.75rem;
         line-height: 16px; line-height: 1rem;
-        padding-top: 8px;
+        padding-top: 16px;
     }
 
     .blog-description {
@@ -1052,12 +1084,12 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .post {
-        font-size: 18px; font-size: 1.125rem;
-        line-height: 21px; line-height: 1.3125em;
+        font-size: 20px; font-size: 1.25rem;
+        line-height: 22px; line-height: 1.375em;
     }
 
     .post-template .post {
-        padding-bottom: 1rem;
+        padding-bottom: 0;
     }
 
     .post-template .post-header {
@@ -1121,7 +1153,7 @@ margin on the iframe, cause it breaks stuff. */
     .blog-title {
         font-size: 16px; font-size: 1rem;
         line-height: 12px; line-height: 0.75rem;
-        padding-top: 0px;
+        padding-top: 16px;
         font-weight: 400;
         letter-spacing: 3px;
     }
@@ -1199,12 +1231,12 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .post-footer .share {
-        position: static;
         width: auto;
     }
 
     .post-footer .share a {
-        margin: 1.4rem 0.8rem 0 0.8rem;
+        margin: auto;
+
     }
 
     .older-posts,
@@ -1218,7 +1250,6 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .site-footer {
-        margin-top: 3rem;
         font-size: 12px; font-size: 0.75rem;
         line-height: 24px; line-height: 1.5em;
     }
