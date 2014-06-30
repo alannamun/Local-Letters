@@ -3,10 +3,12 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
+{{! The flyout sidebar for the about section }}
 <section class="pushy pushy-right">
 <div>
     <div class="about-content">
-       <h2 class="blog-description">Letters are something that surround us every day but are barely noticed. <a href="http://alannamunro.com" target="_blank">Alanna Munro</a> created this project to bring attention to the letters in our every day surroundings. This is a collection of letters found on building entrances around Vancouver, Canada. </h2>
+       <h2 class="blog-description">Many of the apartment buildings in Vancouver proudly display their name in golden, hand-lettered paint on their front doors. In an effort to study these artifacts in more detail and practice drawing letters, <a href="http://alannamunro.com" target="_blank">Alanna Munro</a> started this project. Each of the drawings is based on a fine example of hand-lettering found in the neighbourhoods of Vancouver.</h2>
+        <p>Proudly published with <a href="https://ghost.org/" target="_blank">Ghost</a>. Typeface used is Adelle Sans.</p></h2>
     
     <div class="share">
                     <p></p>
@@ -24,10 +26,6 @@
                         <span class="hidden">Google+</span>
                     </a>
                 </div>
-            <div class="colophon">
-            <p>Proudly published on the <a href="https://ghost.org">Ghost</a> platform. Typeface used is Adelle Sans.  
-            </p>
-            </div>
         </div>
 </div>
 </section>
@@ -67,9 +65,9 @@
             </section>
         </header>
         <section class="post-excerpt">
-                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
         <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
             <p>{{excerpt}}&hellip; <a class="icon-arrow-right" href="{{url}}"></a></p>
+            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM DD YYYY"}}</time> {{tags prefix="&bull; "}}</span>
         </section>
     </article>
 

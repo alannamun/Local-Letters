@@ -567,7 +567,7 @@ margin on the iframe, cause it breaks stuff. */
     width:80%;
     max-width: 700px;
     margin: 3rem auto;
-    padding-bottom: 3rem;
+    padding-bottom: 0.5rem;
     border-bottom: #cdcdcd 1px solid;
     word-break: break-word;
     hyphens: auto;
@@ -600,14 +600,10 @@ margin on the iframe, cause it breaks stuff. */
     vertical-align: middle;
 }
 
-/* Not currently using post meta data */
-.post-meta {
-    display: none;
-}
-/*
+/* Post Metadata */
 .post-meta {
     display: block;
-    margin: 0 0 5px 0;
+    margin: 20px 0 0 0;
     font-family: "adelle-sans", sans-serif;
     font-size: 16px; font-size: 1rem;
     color: #9EABB3;
@@ -616,6 +612,7 @@ margin on the iframe, cause it breaks stuff. */
 .post-meta a {
     color: #9EABB3;
     text-decoration: none;
+    border-bottom: none;
 }
 
 .post-meta a:hover {
@@ -664,7 +661,6 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 1.4rem;
     line-height: 1.5em;
 }
-*/
 
 /* ==========================================================================
    5. Single Post - When you click on an individual post
@@ -701,7 +697,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* Don't show first image in the post */
-.post-content img:first-child {
+.post-content p:nth-of-type(1) {
     display: none;
 }
 

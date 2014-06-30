@@ -3,22 +3,59 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-{{! The big featured header on the homepage, with the site logo and description }}
-<header class="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+{{! The header on the homepage, with the site name }}
+<header class="site-head">
     <div class="vertical">
+        <a class="site-header-link" href="{{@blog.url}}">
         <div class="site-head-content inner">
             {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
             <h1 class="blog-title">{{@blog.title}}</h1>
             <h2 class="blog-description">{{@blog.description}}</h2>
         </div>
+        </a>
     </div>
 </header>
+
+{{! The flyout sidebar for the about section }}
+<section class="pushy pushy-right">
+<div>
+    <div class="about-content">
+
+       <h2 class="blog-description">Many of the apartment buildings in Vancouver proudly display their name in golden, hand-lettered paint on their front doors. In an effort to study these artifacts in more detail and practice drawing letters, <a href="http://alannamunro.com" target="_blank">Alanna Munro</a> started this project. Each of the drawings is based on a fine example of hand-lettering found in the neighbourhoods of Vancouver.</h2>
+        <p>Proudly published with <a href="https://ghost.org/" target="_blank">Ghost</a>. Typeface used is Adelle Sans.</p></h2>
+    
+    <div class="share">
+                    <p></p>
+                    <p>Share This Site</p>
+                    <a class="icon-twitter" href="https://twitter.com/share?text= Local Letters {{url}}"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <span class="hidden">Twitter</span>
+                    </a>
+                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{@blog.url}}"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <span class="hidden">Facebook</span>
+                    </a>
+                    <a class="icon-google-plus" href="https://plus.google.com/share?url={{@blog.url}}"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <span class="hidden">Google+</span>
+                    </a>
+                </div>
+        </div>
+</div>
+</section>
+
 
 {{! The main content area on the homepage }}
 <main class="content" role="main">
 
+<div class="menu-btn">
+<div class="link-text">
+<swap data-text-swap="CLOSE">ABOUT</swap>
+</div>
+</div>
+
         <header class="tag-archive-header">
-            <h1>{{tag.name}}</h1>
+            <h4>{{tag.name}}</h4>
         </header>
 
     {{! Each post will be output using this markup }}
@@ -26,12 +63,13 @@
 
     <article class="{{post_class}}">
         <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
 
         </header>
         <section class="post-excerpt">
-            <p>{{excerpt}}&hellip;</p>
+        <div class="featured-image">
+            <a href="{{url}}">{{content words="0"}}</a>
+            </div>
+        
         </section>
     </article>
 
