@@ -9,13 +9,14 @@
     2.  General
     3.  Utilities
     4.  General
-    5.  Single Post
-    6.  Tag Archive
-    7.  Third Party Elements
-    8.  Pagination
-    9.  Footer
-    10.  Media Queries (Tablet)
-    11. Media Queries (Mobile)
+    5.  About Sidebar
+    6.  Single Post
+    7.  Tag Archive
+    8.  Third Party Elements
+    9.  Pagination
+    10.  Footer
+    11.  Media Queries (Tablet)
+    12. Media Queries (Mobile)
 
  */
 
@@ -158,8 +159,9 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* ==========================================================================
    2. General - Setting up some base styles
    ========================================================================== */
+
+/* Hide the text while web fonts are loading to avoid FOUT */
 .wf-loading body{
-    /* Hide the text while web fonts are loading to avoid FOUT */
     visibility: hidden;
 }
 
@@ -195,7 +197,7 @@ body {
 
 h1, h2, h3,
 h4, h5, h6 {
-    /* text-rendering: optimizeLegibility; */
+    text-rendering: optimizeLegibility;
     line-height: 1;
     margin-top: 0;
     font-family: "adelle-sans", sans-serif;
@@ -475,7 +477,7 @@ margin on the iframe, cause it breaks stuff. */
     width: 100%;
     height: 50px;
     margin: auto;
-    z-index: 500;
+    z-index: 7000;
     text-align: center;
     color: #333333;
     background: #efefef;
@@ -490,7 +492,6 @@ margin on the iframe, cause it breaks stuff. */
     margin-top: 50px;
 }
 
-/* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
     padding-top: 16px;
     font-size: 28px; font-size: 1.75rem;
@@ -499,58 +500,6 @@ margin on the iframe, cause it breaks stuff. */
     letter-spacing: 6px;
     font-family: "adelle-sans", sans-serif;
     text-transform: uppercase;
-}
-
-/* About sidebar, some is controlled in the pushy.css stylesheet */
-.about-content {
-    padding: 80px 25px 0 30px;
-    color: #222222; /* Override defualt text color */
-}
-
-.blog-description {
-    margin-top: 0;
-    font-size: 20px; font-size: 1.25rem;
-    line-height: 28px; line-height: 1.75rem;
-    font-weight: 300;
-    font-family: "adelle-sans", sans-serif;
-    letter-spacing: 0.10px;
-}
-
-.menu-btn{
-    position: fixed;
-    width: 100px;
-    height: 50px;
-    top: 0px;
-    right: 0px;
-    z-index: 9001;
-    color: #3A4145;
-    text-align: center;
-    cursor: pointer;
-}
-
-.link-text{
-    display: block;
-    position: absolute;
-    white-space: nowrap;
-    text-align: center;
-    margin: 12px 22px;
-    font-size: 16px; font-size: 1rem;
-    line-height: 24px; line-height: 1.75rem;
-    font-weight: 600;
-    color: #333333;
-   /* border-bottom: solid 4px #68d8a5; */
-}
-
-.link-text:hover{
-   color: #000;
-}
-
-/* get rid of underline under icon links*/
-.icon-twitter,
-.icon-google-plus,
-.icon-facebook {
-    text-decoration: none;
-    padding-right: 30px;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -619,51 +568,115 @@ margin on the iframe, cause it breaks stuff. */
     text-decoration: none;
 }
 
-.user-meta {
-    position: relative;
-    padding: 0.3rem 40px 0 100px;
-    min-height: 77px;
+
+/* ==========================================================================
+   5. About Sidebar - altered version of pushy by christopher Yee  
+   Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
+   https://github.com/christophery/pushy/
+   ========================================================================== */
+
+/* About sidebar */
+
+.about-content {
+    margin: 80px 25px 0 30px;
+    color: #222222; /* Override defualt text color */
 }
 
-.user-image {
+.blog-description {
+    margin-top: 0;
+    font-size: 20px; font-size: 1.25rem;
+    line-height: 28px; line-height: 1.75rem;
+    font-weight: 300;
+    font-family: "adelle-sans", sans-serif;
+    letter-spacing: 0.10px;
+}
+
+.menu-btn{
+    position: fixed;
+    width: 100px;
+    height: 50px;
+    top: 0px;
+    right: 0px;
+    z-index: 9001;
+    color: #3A4145;
+    text-align: center;
+    cursor: pointer;
+}
+
+.link-text{
+    display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.user-name {
-    display: block;
-    font-weight: bold;
-}
-
-.user-bio {
-    display: block;
-    max-width: 440px;
+    white-space: nowrap;
+    text-align: center;
+    margin: 12px 22px;
     font-size: 16px; font-size: 1rem;
-    line-height: 18px; line-height: 1.125rem;
+    line-height: 24px; line-height: 1.75rem;
+    font-weight: 600;
+    color: #333333;
 }
 
-.publish-meta {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 4.3rem 0 4rem 0;
-    text-align: right;
+.link-text:hover{
+   color: #000;
 }
 
-.publish-heading {
-    display: block;
-    font-weight: bold;
+/* get rid of underline under icon links*/
+.icon-twitter,
+.icon-google-plus,
+.icon-facebook {
+    text-decoration: none;
+    padding-right: 30px;
 }
 
-.publish-date {
-    display: block;
-    font-size: 1.4rem;
-    line-height: 1.5em;
+
+/* Menu Appearance */
+
+.pushy{
+    position: fixed;
+    width: 350px;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    z-index: 5000;
+    background-color: #68d8a5;
+    -webkit-box-shadow: 0 -5px 6px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 -5px 6px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0 -5px 6px 2px rgba(0, 0, 0, .2);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+}
+
+/* Menu Movement */
+
+.pushy-right{
+    -webkit-transform: translate3d(350px,0,0);
+    -moz-transform: translate3d(350px,0,0);
+    -ms-transform: translate3d(350px,0,0);
+    -o-transform: translate3d(350px,0,0);
+    transform: translate3d(350px,0,0);
+}
+
+.pushy-open{
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+/* Menu Transitions */
+
+.pushy, #container, .push{
+    -webkit-transition: -webkit-transform .2s cubic-bezier(.16, .68, .43, .99);
+    -moz-transition: -moz-transform .2s cubic-bezier(.16, .68, .43, .99);
+    -o-transition: -o-transform .2s cubic-bezier(.16, .68, .43, .99);
+    transition: transform .2s cubic-bezier(.16, .68, .43, .99);
+    /* improves performance issues on mobile*/
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
 }
 
 /* ==========================================================================
-   5. Single Post - When you click on an individual post
+   6. Single Post - When you click on an individual post
    ========================================================================== */
 
 /* Stop .full-img from creating horizontal scroll - slight hack due to
@@ -718,7 +731,7 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0 -13%;
 }
 
-/* The author credit area after the post */
+/* The share area after the post */
 .post-footer {
     position: relative;
     margin: auto;
@@ -738,46 +751,6 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 16px; font-size: 1rem;
     line-height: 18px; line-height: 1.125em;
 }
-
-/* list of author links - location / url */
-.author {
-    display: none;
-}
-/* not using the autor info for this blog
-.author-meta {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    font-size: 1rem;
-    line-height: 1;
-    font-style: italic;
-    color: #9EABB3;
-}
-
-.author-meta li {
-    float: left;
-    margin-left: 10px; /* space to the left of the bullet */
-}
-
-/* bullet divider */
-/*.author-meta li:before {
-    content: "•";
-    display: inline-block;
-    margin-right: 10px; /* space to the right of the bullet */
-/*    color: #BBC7CC;
-}
-
-/* disable the bullet divider for the first item in the list */
-/*.author-meta li:first-child { margin-left: 0; }
-.author-meta li:first-child:before { display: none; }
-
-.author-meta a {
-    color: #9EABB3;
-}
-.author-meta a:hover {
-    color: #57A3E8;
-}
-*/
 
 /* Create some space to the right for the share links */
 .post-footer .author {
@@ -812,7 +785,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   6. Tag archive
+   7. Tag archive
    ========================================================================== */
 
 .archive-template .site-head {
@@ -830,29 +803,16 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .tag-archive-header {
-    padding: 20px 0;
+    padding: 70px 0 0 0;
     text-align: center;
     max-width: 700px;
-    margin: 4rem auto;
+    line-height: 1rem;
+    margin: auto;
     border-bottom: 1px solid #EBF2F6;
     position: relative;
 }
 
 .tag-archive-header:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: #fff;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    box-shadow: #fff 0 0 0 5px;
 }
 
 .archive-template .blog-title {
@@ -860,8 +820,12 @@ margin on the iframe, cause it breaks stuff. */
     padding: 2.5rem 0;
 }
 
+.archive-template .post-excerpt .featured-image{
+    margin-bottom: 2rem;
+}
+
 /* ==========================================================================
-   7. Third Party Elements - Embeds from other services
+   8. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -878,7 +842,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   8. Pagination - Tools to let you flick between pages
+   9. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -931,7 +895,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   9. Footer - The bottom of every page
+   10. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -954,106 +918,8 @@ margin on the iframe, cause it breaks stuff. */
     color: #50585D;
 }
 
-.poweredby .icon-ghost {
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.poweredby .icon-ghost:hover {
-    text-decoration: none;
-}
-
-.poweredby .icon-ghost:before {
-    font-size: 1rem;
-    margin-right: 0.2em;
-}
-
-/* The subscribe icon on the footer 
-.subscribe {
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    margin-left: -15px;
-    border: #EBF2F6 1px solid;
-    text-align: center;
-    line-height: 2.4rem;
-    border-radius: 50px;
-    background: #fff;
-    transition: box-shadow 0.5s;
-}
-*/
-
-/* The RSS icon, inserted via icon font 
-.subscribe:before {
-    color: #D2DEE3;
-    font-size: 10px;
-    position: absolute;
-    top: 9px;
-    left: 9px;
-    font-weight: bold;
-    transition: color 0.5s ease;
-}
-*/
-
-
-/* Add a box shadow to on hover 
-.subscribe:hover {
-    box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
-    transition: box-shadow 0.25s;
-}
-
-.subscribe:hover:before {
-    color: #50585D;
-}
-*/
-
-
-/* CSS tooltip saying "Subscribe!" - initially hidden 
-.tooltip {
-    opacity:0;
-    display: inline-block;
-    padding: 4px 8px 5px 8px;
-    position:absolute;
-    top: -23px;
-    left: -21px;
-    color: rgba(255,255,255,0.9);
-    font-size: 1.1rem;
-    line-height: 1em;
-    text-align: center;
-    background: #50585D;
-    border-radius:20px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    transition: opacity 0.3s ease, top 0.3s ease;
-}
-*/
-
-/* The little chiclet arrow under the tooltip, pointing down 
-.tooltip:after {
-    content:"";
-    border-width:5px 5px 0 5px;
-    border-style:solid;
-    border-color: #50585D transparent;
-    display:block;
-    position:absolute;
-    bottom:-4px;
-    left:50%;
-    margin-left:-5px;
-    z-index: 220;
-    width:0;
-}
-*/
-
-/* On hover, show the tooltip! 
-.subscribe:hover .tooltip {
-    opacity: 1;
-    top: -33px;
-}
-*/
-
 /* ==========================================================================
-   10. Media Queries - Smaller than 900px
+   11. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -1115,7 +981,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* ==========================================================================
-   11. Media Queries - Smaller than 500px
+   12. Media Queries - Smaller than 500px
    ========================================================================== */
 
 
@@ -1140,7 +1006,7 @@ margin on the iframe, cause it breaks stuff. */
     }
     .content {
     margin-top: 50px;
-}
+    }
 
     .site-head {
         height: 50px;
@@ -1166,7 +1032,7 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .blog-description {
-        font-size: 18px; font-size: 1.125rem;
+        font-size: 16px; font-size: 1rem;
         line-height: 24px; line-height: 1.5em;
     }
 
@@ -1181,25 +1047,41 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     h1, h2 {
-        font-size: 32px; font-size: 2rem;
-        line-height: 36px; line-height: 2.25rem;
+        font-size: 28px; font-size: 1.75rem;
+        line-height: 32px; line-height: 2rem;
         letter-spacing: 0.325px;
     }
 
     h3 {
-        font-size: 28px; font-size: 1.75rem;
-        line-height: 32px; line-height: 2rem;
-    }
-
-    h4 {
         font-size: 24px; font-size: 1.5rem;
         line-height: 32px; line-height: 2rem;
     }
 
-    .post-template .post {
-        top: 0;
-        margin-top: 0px;
+    h4 {
+        font-size: 20px; font-size: 1.25rem;
+        line-height: 32px; line-height: 2rem;
     }
+
+    .pushy{
+    width: 300px;
+    }
+
+    .pushy-right{
+    -webkit-transform: translate3d(300px,0,0);
+    -moz-transform: translate3d(300px,0,0);
+    -ms-transform: translate3d(300px,0,0);
+    -o-transform: translate3d(300px,0,0);
+    transform: translate3d(300px,0,0);
+    }
+
+    .pushy-open{
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
 
     .post-template .post-header {
         padding: 0;
