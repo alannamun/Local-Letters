@@ -1,0 +1,11 @@
+{
+  "the-flamingo": {
+    "title": "The Flamingo",
+    "date": "2015-08-04",
+    "address": "2050 West 2nd Ave",
+    "tags": {
+      "classifcation": "Script",
+      "neighbourhood": "Kitsilano"
+    }
+  }
+}

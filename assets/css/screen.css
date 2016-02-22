@@ -570,7 +570,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   5. About Sidebar - altered version of pushy by christopher Yee  
+   5. About Sidebar - altered version of pushy by christopher Yee
    Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
    https://github.com/christophery/pushy/
    ========================================================================== */
@@ -710,9 +710,12 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* Don't show first image in the post */
-.post-content p:nth-of-type(1) {
+/* Kenneth removed this becuase he didn’t know why it
+   was there, and it was also removing the first paragraph
+   of the post instead */
+/*.post-content p:nth-of-type(1) {
     display: none;
-}
+}*/
 
 /* Keep images centred and within the bounds of the post-width */
 .post-content img {
@@ -1024,7 +1027,7 @@ margin on the iframe, cause it breaks stuff. */
         width: 60px;
         height: 50px;
     }
-    
+
     .link-text{
         margin: 19px 10px;
         font-size: 12px; font-size: 0.75rem;
