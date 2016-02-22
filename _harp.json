@@ -1,0 +1,18 @@
+{
+  "globals": {
+    "meta": {
+      "title": "Local Lettering",
+      "description": "About the blog"
+    },
+    "blog": {
+      "title": "Local Lettering",
+      "url": "/"
+    },
+    "body_class": "",
+    "url": "http://locallettering.com/",
+    "post_class": "post",
+    "assets": "/assets/",
+    "media": "/media/",
+    "blog_logo": "/images/logo.png"
+  }
+}

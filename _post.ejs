@@ -1,0 +1,89 @@
+<% /* The flyout sidebar for the about section */ %>
+<section class="pushy pushy-right">
+<div>
+    <div class="about-content">
+
+       <h2 class="blog-description">Many of the apartment buildings in Vancouver proudly display their name in golden, hand-lettered paint on their front doors. In an effort to study these artifacts in more detail and practice drawing letters, <a href="http://alannamunro.com" target="_blank">Alanna Munro</a> started this project. Each of the drawings is based on a fine example of hand-lettering found in the neighbourhoods of Vancouver.</h2>
+        <p>Proudly published with <a href="https://ghost.org/" target="_blank">Ghost</a>. Typeface used is Adelle Sans.</p></h2>
+
+    <div class="share">
+                    <p></p>
+                    <p>Share This Site</p>
+                    <a class="icon-twitter" href="https://twitter.com/share?text= Local Letters <%= url %>"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <span class="hidden">Twitter</span>
+                    </a>
+                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= blog.url %>"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <span class="hidden">Facebook</span>
+                    </a>
+                    <a class="icon-google-plus" href="https://plus.google.com/share?url=<%= blog.url %>"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <span class="hidden">Google+</span>
+                    </a>
+                </div>
+        </div>
+</div>
+</section>
+
+
+<% /* The main content area on the homepage */ %>
+
+  <div class="site-overlay"></div>
+
+<main class="content" role="main">
+
+<div class="menu-btn">
+<div class="link-text">
+<swap data-text-swap="CLOSE">ABOUT</swap>
+</div>
+</div>
+
+    <article class="<%= post_class %>">
+
+        <header class="post-header">
+          <section class="featured-image">
+            <img src="<%= media %><%= current.source %>.svg" alt="<%= title %>">
+            <p></p>
+          </section>
+        </header>
+
+
+        <section class="post-content">
+          <h1 class="post-title"><%= title %></h1>
+          <%- yield %>
+
+          <span class="post-meta"><time datetime="<%- new Date(date).toUTCString() %>"><%- date %></time> %><!-- {{tags prefix="on " separator=" | "}} --></span>
+          <% // JSON.stringify(tags) %>
+        </section>
+
+        <footer class="post-footer">
+
+            <% if(typeof author !== 'undefined') { %>
+                <section class="author">
+                    <h4><%= author.name %></h4>
+                    <p><%= author.bio %></p>
+                </section>
+            <% } %>
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=<%= title %>&url=<%= blog.url + current.source %>"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= blog.url + current.source %>"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=<%= blog.url + current.source %>"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
