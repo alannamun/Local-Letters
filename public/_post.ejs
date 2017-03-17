@@ -53,8 +53,27 @@
           <h1 class="post-title"><%= title %></h1>
           <%- yield %>
 
-          <span class="post-meta"><time datetime="<%- new Date(date).toUTCString() %>"><%- date %></time> %><!-- {{tags prefix="on " separator=" | "}} --></span>
-          <% // JSON.stringify(tags) %>
+          <div class="post-meta">
+            <time datetime="<%- new Date(date).toUTCString() %>"><%- date %></time> %>
+            <ul>
+            <% if (typeof tags !== 'undefined') { %>
+              <% /* The tags are an array of ojbects in the `_data.json` file. Iterate over them. */ %>
+              <%for (var result in tags){ %>
+
+                <% /* The tag object, ex. `{ "Classification": "Script" }` */ %>
+                <% var tagObject = tags[result] %>
+
+                <% /* The tag cateogry, ex. `"Classification"` */ %>
+                <% var tagCategory = Object.keys(tags[result]) %>
+
+                <% /* The markup for the tag list item */ %>
+                <li><strong><%= tagCategory %></strong> <%= tagObject[tagCategory] %></li>
+
+              <% } %>
+            <% } %>
+            </ul>
+        </div>
+
         </section>
 
         <footer class="post-footer">
