@@ -2,6 +2,15 @@
   "name": "Locale",
   "version": "2.0.0",
   "devDependencies": {
-    "harp": "0.20.1"
+    "harp": "0.20.1",
+    "jsonlint": "1.6.2",
+    "surge": "0.19.0"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/harp server",
+    "build": "./node_modules/.bin/harp build",
+    "build:nofollow": "echo 'User-agent: *\nDisallow: /' > ./www/robots.txt",
+    "prestage": "npm run build; npm run build:nofollow",
+    "stage": "./node_modules/.bin/surge ./www local-lettering-example.surge.sh"
   }
 }

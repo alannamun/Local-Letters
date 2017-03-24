@@ -3,114 +3,171 @@
     "title": "The Flamingo",
     "date": "2015-08-04",
     "address": "2050 West 2nd Ave",
-    "tags": ["Script", "Kitsilano"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "Kitsilano" }
+    ]
   },
   "view-arms": {
     "title":"View Arms",
     "date": "2015-03-24",
     "address": "2182 West 2nd Ave",
-    "tags": ["Script", "Kitsilano"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "Kitsilano" }
+    ]
   },
   "ocean-villa": {
     "title":"Ocean Villa",
     "date": "2015-03-18",
     "address": "2168 West 2nd Ave",
-    "tags": ["Script", "Kitsilano"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "Kitsilano" }
+    ]
   },
   "westwind": {
     "title":"Westwind",
     "date": "2015-03-11",
     "address": "1550 West 11th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
   "the-wendalin": {
     "title":"The Wendalin",
     "date": "2015-02-27",
     "address": "1233 West 11th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
   "royal-anna-court": {
     "title":"Royal Anna Court",
     "date": "2015-02-11",
     "address": "1585 West 11th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
   "ocean-crest-manor": {
     "title":"Ocean Crest Manor",
     "date": "2015-02-18",
     "address": "1817 Yew Street",
-    "tags": ["Script", "Kitsilano"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "Kitsilano" }
+    ]
   },
   "the-cumberland": {
     "title":"The Cumberland",
     "date": "2015-02-06",
     "address": "2950 Cambie Street",
-    "tags": ["Serif", "Cambie"]
+    "tags": [
+      { "Classification": "Serif" },
+      { "Neighbourhood": "Cambie" }
+    ]
   },
   "pine-tree-court": {
     "title":"Pine Tree Court",
     "date": "2014-10-01",
     "address": "1175 West 11th Ave",
-    "tags": ["Serif", "South Granville"]
+    "tags": [
+      { "Classification": "Serif" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "sutherland-place": {
     "title":"Sutherland Place",
     "date": "2014-09-17",
     "address": "1054 West 11th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "cecilia-court": {
     "title":"Cecilia Court",
     "date": "2014-08-12",
     "address": "1645 West 11th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "braemar": {
     "title":"Braemar",
     "date": "2014-08-06",
     "address": "1379 West 16th Ave",
-    "tags": ["Slab Serif", "South Granville"]
+    "tags": [
+      { "Classification": "Slab Serif" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "queen-anne-place": {
     "title":"Queen Anne Place",
     "date": "2014-08-01",
     "address": "1255 West 14th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "the-unique": {
     "title":"The Unique",
     "date": "2014-07-22",
     "address": "2675 Fir Street",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "wynne-manor": {
     "title":"Wynne Manor",
     "date": "2014-07-25",
     "address": "1309 West 14th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "the-regency": {
     "title":"The Regency",
     "date": "2014-07-18",
     "address": "1445 West 14th Ave",
-    "tags": ["Serif", "South Granville"]
+    "tags": [
+      { "Classification": "Serif" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "the-aberdare": {
     "title":"The Aberdare",
     "date": "2014-07-15",
     "address": "1656 West 11th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "gauntlett-manor": {
     "title":"Gauntlett Manor",
     "date": "2014-07-07",
     "address": "1336 West 14th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   },
     "marions-manor": {
     "title":"Marion's Manor",
     "date": "2014-07-04",
     "address": "1476 West 14th Ave",
-    "tags": ["Script", "South Granville"]
+    "tags": [
+      { "Classification": "Script" },
+      { "Neighbourhood": "South Granville" }
+    ]
   }
 }

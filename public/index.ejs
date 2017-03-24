@@ -1,13 +1,9 @@
-<!--  The flyout sidebar for the about section -->
+<% /* The flyout sidebar for the about section */ %>
 <section class="pushy pushy-right">
 <div>
     <div class="about-content">
-       <h2 class="blog-description">Many of the apartment buildings in Vancouver proudly display their name in golden, hand-lettered paint on their front doors. In an effort to study these artifacts in more detail and practice drawing letters, <a href="http://alannamunro.com" target="_blank">Alanna Munro</a> started this project. Each of the drawings is based on a fine example of hand-lettering found in the neighbourhoods of Vancouver.
-        
-       <p><a href="http://www.alannamunro.com/store/">Postcards now for sale!<a>.</p>
-
-       <p>Typeface used is Adelle Sans.</p>
-       </h2>
+       <h2 class="blog-description">Many of the apartment buildings in Vancouver proudly display their name in golden, hand-lettered paint on their front doors. In an effort to study these artifacts in more detail and practice drawing letters, <a href="http://alannamunro.com" target="_blank">Alanna Munro</a> started this project. Each of the drawings is based on a fine example of hand-lettering found in the neighbourhoods of Vancouver.</h2>
+        <p>Proudly published with <a href="https://ghost.org/" target="_blank">Ghost</a>. Typeface used is Adelle Sans.</p></h2>
 
     <div class="share">
                     <p></p>
@@ -41,6 +37,9 @@
 </div>
 </div>
 
+    <% /* Each post will be output using this markup */ %>
+    <% // foreach posts %>
+
     <!-- Each post will be output using this markup  -->
     <% for (url in public._data) { %>
     <% var post = public._data[url] %>
@@ -54,7 +53,7 @@
         <section class="post-excerpt">
         <h2 class="post-title"><a href="<%= url %>"><%= post.title %></a></h2>
             <p><%- partial(url).replace(/<[^>]*>/g, "").substr(0, 250) %>&hellip; <a class="icon-arrow-right" href="<%= url %>"></a></p>
-            <span class="post-meta"><time datetime="<%- new Date(post.date).toUTCString() %>"><%= post.date %></time> <% "tags" %></span>
+            <span class="post-meta"><time datetime="<%- new Date(post.date).toUTCString() %>"><%= post.date %></time> <% /* tags */ %></span>
         </section>
     </article>
 

@@ -7,7 +7,7 @@
 
     <% /* Page Meta */ %>
     <title><%= meta.title %></title>
-    <meta name="description" content="<% meta.description %>" />
+    <meta name="description" content="<%= meta.description %>" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,11 +41,11 @@
     <% /* {{ghost_foot}} */ %>
 
     <% /* The main JavaScript file for Casper */ %>
+    <script type="text/javascript" src="<%= assets %>js/vendor/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="<%= assets %>js/vendor/modernizr.custom.71422.js"></script>
     <script type="text/javascript" src="<%= assets %>js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="<%= assets %>js/index.js"></script>
     <script type="text/javascript" src="<%= assets %>js/pushy.min.js"></script>
-    <script type="text/javascript" src="<%= assets %>js/vendor/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript" src="<%= assets %>js/vendor/modernizr.custom.71422.js"></script>
 
 </body>
 </html>
